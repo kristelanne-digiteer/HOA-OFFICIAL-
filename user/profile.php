@@ -27,7 +27,7 @@ if (isset($_POST['update_profile'])) {
     $address           = mysqli_real_escape_string($conn, trim($_POST['address']));
     $unit_number       = mysqli_real_escape_string($conn, trim($_POST['unit_number']));
     $contact_number    = mysqli_real_escape_string($conn, trim($_POST['contact_number']));
-    
+    $emergency_contact = mysqli_real_escape_string($conn, trim($_POST['emergency_contact']));
 
     $email_check = mysqli_query($conn, "SELECT user_id FROM users WHERE email='$email' AND user_id!='$user_id' LIMIT 1");
     if (mysqli_num_rows($email_check) > 0) {
